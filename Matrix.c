@@ -24,22 +24,22 @@ int main()
 	int i = 0;
 	char ch = 0;
 	int freq = 15;
-	//int frame = 200;
+	int frame = 200;
 
 	clrscr();
 	gotoxy(0, 23);
-	//printf("메트릭스 흉내내기, 상하:속도 증감, 좌우:빈도 증감, ESC:종료");
+	printf("메트릭스 흉내내기, 상하:속도 증감, 좌우:빈도 증감, ESC:종료");
 	randomize();
 	while (TRUE)
 	{
-		//gotoxy(60, 23);
-		//printf("속도:%d, 빈도:%d  ", frame, freq);
+		gotoxy(60, 23);
+		printf("속도:%d, 빈도:%d  ", frame, freq);
 
 		//키 입력처리
 		if (_kbhit())
 		{
 				ch = _getch();
-				/*switch(ch)
+				switch(ch)
 				{
 				case UP:
 					frame = min(frame + 10, 1000);
@@ -53,7 +53,7 @@ int main()
 				case LEFT:
 					freq = min(freq + 1, 30);
 					break;
-				}*/
+				}
 				
 				if (ch == ESC)
 					return 0;			
@@ -98,6 +98,6 @@ int main()
 			}
 		}
 
-		delay(100);
+		delay(1000/frame);
 	}
 }
